@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日日记 - 图片上传与记录</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>每日日记</h1>
+            <p>记录生活的每一个瞬间</p>
+        </header>
+        
+        <main>
+            <!-- 上传区域 -->
+            <section class="upload-section">
+                <h2>上传图片</h2>
+                <div class="upload-area">
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <label for="fileInput" class="upload-btn">选择图片</label>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+                <div class="caption-section">
+                    <textarea id="caption" placeholder="添加文字描述..."></textarea>
+                    <button id="saveBtn" class="btn">保存记录</button>
+                </div>
+            </section>
+            
+            <!-- 提醒设置 -->
+            <section class="reminder-section">
+                <h2>提醒设置</h2>
+                <div class="reminder-toggle">
+                    <label for="reminderToggle">每小时提醒</label>
+                    <input type="checkbox" id="reminderToggle" checked>
+                </div>
+                <p id="nextReminder">下次提醒: <span></span></p>
+            </section>
+            
+            <!-- 历史记录 -->
+            <section class="history-section">
+                <h2>历史记录</h2>
+                <div id="historyList" class="history-list"></div>
+            </section>
+            
+            <!-- 导出功能 -->
+            <section class="export-section">
+                <h2>导出日记</h2>
+                <button id="exportBtn" class="btn btn-primary">导出PDF</button>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2026 每日日记</p>
+        </footer>
+    </div>
+    
+    <!-- 提醒对话框 -->
+    <div id="reminderDialog" class="dialog hidden">
+        <div class="dialog-content">
+            <h3>该上传图片了！</h3>
+            <p>记得记录你此刻的生活瞬间</p>
+            <button id="dialogClose" class="btn">关闭</button>
+            <button id="dialogUpload" class="btn btn-primary">去上传</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
