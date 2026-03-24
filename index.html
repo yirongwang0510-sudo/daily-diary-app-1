@@ -37,6 +37,20 @@
                     <label for="reminderToggle">每小时提醒</label>
                     <input type="checkbox" id="reminderToggle" checked>
                 </div>
+                <div class="notification-permission">
+                    <button id="requestPermissionBtn" class="btn">请求通知权限</button>
+                    <p id="permissionStatus">通知权限: <span>未请求</span></p>
+                </div>
+                <div class="rest-time-setting">
+                    <h3>休息时间</h3>
+                    <p>在以下时间段内不发送提醒</p>
+                    <div class="time-range">
+                        <label for="restStartTime">开始时间:</label>
+                        <input type="time" id="restStartTime" value="22:00">
+                        <label for="restEndTime">结束时间:</label>
+                        <input type="time" id="restEndTime" value="08:00">
+                    </div>
+                </div>
                 <p id="nextReminder">下次提醒: <span></span></p>
             </section>
             
